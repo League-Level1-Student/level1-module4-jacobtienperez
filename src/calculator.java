@@ -88,10 +88,7 @@ public void mouseClicked(MouseEvent e) {
 		double divi = Double.parseDouble(num2.getText());
 		double divid = (div/divi);
 		
-		 if(divid==0) {
-			JOptionPane.showMessageDialog(null, "The computer exploded"); 
-			frame.
-		 }
+		 
 		 JOptionPane.showMessageDialog(null, (divid));
 		 
 		
