@@ -3,6 +3,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -11,30 +12,46 @@ JFrame frame;
 JPanel panel;
 JButton but;
 JTextField input;
-JTextField translate;
-piglatintranslater pigLatin;
+JTextField trans;
+PigLatinTranslator pigLatin;
 public static void main(String[] args) {
-	
+	new piglatinUI().createUI();
 }
 public void createUI() {
 	frame = new JFrame();
 	panel = new JPanel ();
 	but = new JButton();
 	input = new JTextField();
-	translate = new JTextField();
-	pigLatin = new piglatintranslater();
+	trans = new JTextField();
+	frame.setVisible(true);
+	pigLatin = new PigLatinTranslator();
 	but.setText("Translate");
-	frame.add(but);
+	panel.add(but);
+	input.setSize(50, 80);
+	input.setText("enter word here");
+	trans.setSize(50, 80);
+    trans.setText("translation");
 	frame.add(panel);
-	frame.add(input);
-	frame.add(translate);
-
+	panel.add(input);
+	panel.add(trans);
+	panel.setSize(200,200);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.pack();
+    
 	
 }
 @Override
-public void mouseClicked(MouseEvent arg0) {
+public void mouseClicked(MouseEvent e) {
 	// TODO Auto-generated method stub
-	
+if(e.getSource().equals(but)) {
+	String result = pigLatin(input.getText());
+    String res = pigLatin.translate(result);
+     trans.setText(res);
+}
+}
+private String pigLatin(String text) {
+	// TODO Auto-generated method stub
+	return null;
 }
 @Override
 public void mouseEntered(MouseEvent arg0) {
