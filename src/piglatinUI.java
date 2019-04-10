@@ -17,7 +17,7 @@ PigLatinTranslator pigLatin;
 public static void main(String[] args) {
 	new piglatinUI().createUI();
 }
-public void createUI() {
+ void createUI() {
 	frame = new JFrame();
 	panel = new JPanel ();
 	but = new JButton();
@@ -30,7 +30,7 @@ public void createUI() {
 	input.setSize(50, 80);
 	input.setText("enter word here");
 	trans.setSize(50, 80);
-    trans.setText("translation");
+   
 	frame.add(panel);
 	panel.add(input);
 	panel.add(trans);
