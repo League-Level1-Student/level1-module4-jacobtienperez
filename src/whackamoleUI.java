@@ -47,9 +47,18 @@ void makebuttons() {
 }
 
 @Override
-public void mouseClicked(MouseEvent arg0) {
+public void mouseClicked(MouseEvent e) {
 	// TODO Auto-generated method stub
-	JButton b = (JButton)
+	String text = but.getText();
+	if(e.getSource().equals(but)) {
+	  if(text == "monty mole") {
+		  
+	  }
+	  else {
+		  but.setText("miss");
+	  }
+	}
+	
 }
 @Override
 public void mouseEntered(MouseEvent arg0) {
