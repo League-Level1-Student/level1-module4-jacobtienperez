@@ -3,6 +3,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -57,18 +58,35 @@ public void run() {
    spinner.addMouseListener(this);
   
 }
-private void spinReels() {
-	//clear reels panel
-	//call spinReel for each reel
-	//check for win
-	//revalidate the reels panel
-}
 private int spinreel() {
+	Random r = new Random();
+	int random = r.nextInt(2);
+	if(random == 0) {
+	  resultleft = loadImageFromComputer("7.png");
+	 }
+	else if (random == 0) {
+		resultright = loadImageFromComputer("7.png");
+	}
+	
+	
+
+   
 	//set random value0-2
 	//load image label based on random#
 	//add label to reels panel
 	//return random#
+	return random;
 }
+private void spinReels() {
+	slot.removeAll();
+	
+}
+	
+	//clear reels panel
+	//call spinReel for each reel
+	//check for win
+	//revalidate the reels panel
+
 
 @Override
 public void mouseClicked(MouseEvent e) {
